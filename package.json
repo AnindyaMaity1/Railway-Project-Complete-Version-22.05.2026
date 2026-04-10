@@ -1,0 +1,35 @@
+{
+  "name": "railway-track-qr-system",
+  "version": "1.0.0",
+  "description": "AI-based Laser QR Code marking system for Indian Railways track fittings",
+  "main": "server/index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run decision-copilot\"",
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm start",
+    "ai-service": "cd ai-service && python app.py",
+    "decision-copilot": "cd \"Decision Copilot\" && npm start",
+    "install-all": "npm install && cd server && npm install && cd ../client && npm install && cd ../ai-service && pip install -r requirements.txt && cd ../\"Decision Copilot\" && npm install"
+  },
+  "keywords": [
+    "railway",
+    "qr-code",
+    "ai",
+    "track-fittings",
+    "inventory-management"
+  ],
+  "author": "Railway Track QR Team",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "dependencies": {
+    "axios": "^1.12.2",
+    "bcryptjs": "^3.0.3",
+    "mongoose": "^9.2.4",
+    "node-geocoder": "^4.4.1",
+    "sass": "^1.92.1",
+    "socket.io": "^4.8.1",
+    "socket.io-client": "^4.8.1"
+  }
+}

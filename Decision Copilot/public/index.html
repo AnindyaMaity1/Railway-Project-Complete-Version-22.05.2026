@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Railway Inventory Decision Copilot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="bg-slate-950 text-slate-100 min-h-screen">
+    <div class="min-h-screen flex flex-col">
+      <header
+        class="border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-20"
+      >
+        <div
+          class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between"
+        >
+          <div class="flex items-center gap-2">
+            <div
+              class="h-8 w-8 rounded-xl bg-gradient-to-br from-sky-400 via-fuchsia-500 to-emerald-400 flex items-center justify-center text-xs font-bold"
+            >
+              DC
+            </div>
+            <div>
+              <div class="font-semibold tracking-tight">
+                Drishti - Decision Copilot
+              </div>
+              <div class="text-xs text-slate-400">
+                Structured thinking engine for track & parts decisions
+              </div>
+            </div>
+          </div>
+          <div class="hidden sm:flex items-center gap-3 text-xs text-slate-400">
+            <button
+              id="download-pdf"
+              class="inline-flex items-center gap-1 rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 text-white px-3 py-1.5 font-medium transition-all disabled:opacity-40 disabled:cursor-not-allowed shadow-lg shadow-violet-500/20"
+              disabled
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              Download Report
+            </button>
+            <span class="inline-flex items-center gap-1">
+              <span
+                class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"
+              ></span>
+              AI Powered
+            </span>
+            <span class="hidden md:inline">|</span>
+              <span class="hidden md:inline"
+                >Monte Carlo • SHAP • RL Learning</span
+              >
+          </div>
+        </div>
+      </header>
+
+      <main class="flex-1">
+        <div class="max-w-6xl mx-auto px-4 py-6">
+          <div class="grid grid-cols-1 md:grid-cols-10 gap-6">
+            <div class="md:col-span-6 space-y-6">
+            <section class="space-y-6">
+            <div
+              class="bg-slate-900/80 border border-slate-800 rounded-2xl shadow-xl shadow-slate-950/60 p-4 sm:p-6 space-y-4"
+            >
+              <div class="flex items-center justify-between gap-2">
+                <div>
+<h2 class="font-semibold text-lg flex items-center gap-2">
+                    AI Decision Copilot
+                    <span
+                      id="status-pill"
+                      class="text-[10px] uppercase tracking-wide rounded-full px-2 py-0.5 border border-slate-700 text-slate-400"
+                    >
+                      idle
+                    </span>
+                  </h2>
+                  <p class="text-xs text-slate-400 mt-0.5">
+                    Enter your railway decision. AI will run simulations, forecasts, and provide learnable recommendations.
+                  </p>
+                </div>
+              </div>
+
+              <form id="decision-form" class="space-y-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div class="space-y-2">
+                    <label
+                      class="text-xs font-medium text-slate-300 uppercase tracking-wide"
+                      for="title"
+                      >Decision title</label
+                    >
+                    <input
+                      id="title"
+                      type="text"
+                      placeholder="e.g. Choose safety stock strategy for mainline track parts"
+                      class="w-full rounded-xl bg-slate-900 border border-slate-700/80 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500/70 focus:border-sky-400/60 placeholder-slate-500"
+                    />
+                  </div>
+
+                  <div class="space-y-2">
+                    <label
+                      class="text-xs font-medium text-slate-300 uppercase tracking-wide"
+                      for="context"
+                      >Railway context & constraints</label
+                    >
+                    <textarea
+                      id="context"
+                      rows="3"
+                      placeholder="What railway corridor or depot is in scope? Any constraints on safety, service levels, budget, lead times, or maintenance windows?"
+                      class="w-full rounded-xl bg-slate-900 border border-slate-700/80 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500/70 focus:border-sky-400/60 placeholder-slate-500 resize-none"
+                    ></textarea>
+                  </div>
+
+                  <div class="space-y-2">
+                    <div class="flex items-center justify-between">
+                      <label
+                        class="text-xs font-medium text-slate-300 uppercase tracking-wide"
+                      >Options (inventory / maintenance strategies)</label
+                      >
+                      <button
+                        type="button"
+                        id="add-option"
+                        class="inline-flex items-center gap-1 rounded-full border border-slate-700 px-2 py-0.5 text-[11px] text-slate-300 hover:border-sky-500 hover:text-sky-300 transition-colors"
+                      >
+                        <span class="text-sky-400 text-base leading-none">+</span>
+                        Add option
+                      </button>
+                    </div>
+                    <p class="text-[11px] text-slate-500">
+                      Name the realistic strategies you're considering (e.g.
+                      centralised depot, local buffers, vendor‑managed
+                      inventory). We'll compare them side‑by‑side.
+                    </p>
+
+                    <div
+                      id="options-container"
+                      class="space-y-2 mt-1 text-sm"
+                    ></div>
+                  </div>
+
+                  <div class="space-y-2">
+                    <div class="flex items-center justify-between">
+                      <label
+                        class="text-xs font-medium text-slate-300 uppercase tracking-wide"
+                        for="notes"
+                        >Meeting notes / arguments (railway scenario)</label
+                      >
+                      <span class="text-[10px] text-slate-500"
+                        >hint: prefix lines with "+" or "-" for pros/cons, and
+                        mention option names</span
+                      >
+                    </div>
+                    <textarea
+                      id="notes"
+                      rows="5"
+                      placeholder="+ Option A: Lower safety stock for rail fasteners at Depot A (reduces working capital)
+- Option A: Higher risk of stock‑outs during emergency track repairs
++ Option B: Higher safety stock plus weekend replenishment window
+- Option B: More capital tied up, storage constraints at Depot A
+We already invested in the current vendor contract for these parts..."
+                      class="w-full rounded-xl bg-slate-900 border border-slate-700/80 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500/70 focus:border-sky-400/60 placeholder-slate-500 resize-none min-h-[8rem]"
+                    ></textarea>
+                  </div>
+                </div>
+
+                <div class="space-y-2">
+                  <label
+                    class="text-xs font-medium text-slate-300 uppercase tracking-wide"
+                    for="context"
+                    >Railway context & constraints</label
+                  >
+                  <textarea
+                    id="context"
+                    rows="3"
+                    placeholder="What railway corridor or depot is in scope? Any constraints on safety, service levels, budget, lead times, or maintenance windows?"
+                    class="w-full rounded-xl bg-slate-900 border border-slate-700/80 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500/70 focus:border-sky-400/60 placeholder-slate-500 resize-none"
+                  ></textarea>
+                </div>
+
+                <div class="space-y-2">
+                  <div class="flex items-center justify-between">
+                    <label
+                      class="text-xs font-medium text-slate-300 uppercase tracking-wide"
+                    >Options (inventory / maintenance strategies)</label
+                    >
+                    <button
+                      type="button"
+                      id="add-option"
+                      class="inline-flex items-center gap-1 rounded-full border border-slate-700 px-2 py-0.5 text-[11px] text-slate-300 hover:border-sky-500 hover:text-sky-300 transition-colors"
+                    >
+                      <span class="text-sky-400 text-base leading-none">+</span>
+                      Add option
+                    </button>
+                  </div>
+                  <p class="text-[11px] text-slate-500">
+                    Name the realistic strategies you’re considering (e.g.
+                    centralised depot, local buffers, vendor‑managed
+                    inventory). We’ll compare them side‑by‑side.
+                  </p>
+
+                  <div
+                    id="options-container"
+                    class="space-y-2 mt-1 text-sm"
+                  ></div>
+                </div>
+
+                <div class="space-y-2">
+                  <div class="flex items-center justify-between">
+                    <label
+                      class="text-xs font-medium text-slate-300 uppercase tracking-wide"
+                      for="notes"
+                      >Meeting notes / arguments (railway scenario)</label
+                    >
+                    <span class="text-[10px] text-slate-500"
+                      >hint: prefix lines with “+” or “-” for pros/cons, and
+                      mention option names</span
+                    >
+                  </div>
+                  <textarea
+                    id="notes"
+                    rows="5"
+                    placeholder="+ Option A: Lower safety stock for rail fasteners at Depot A (reduces working capital)
+- Option A: Higher risk of stock‑outs during emergency track repairs
++ Option B: Higher safety stock plus weekend replenishment window
+- Option B: More capital tied up, storage constraints at Depot A
+We already invested in the current vendor contract for these parts..."
+                    class="w-full rounded-xl bg-slate-900 border border-slate-700/80 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500/70 focus:border-sky-400/60 placeholder-slate-500 resize-none min-h-[8rem]"
+                  ></textarea>
+                </div>
+
+                <div class="flex flex-col sm:flex-row sm:items-center gap-3">
+                  <button
+                    id="analyze-button"
+                    type="submit"
+                    class="inline-flex items-center justify-center gap-2 rounded-full bg-sky-500/90 hover:bg-sky-400 text-slate-950 text-sm font-medium px-4 py-2 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+                  >
+                    <span
+                      id="analyze-spinner"
+                      class="hidden h-3 w-3 border-2 border-slate-900 border-t-transparent rounded-full animate-spin"
+                    ></span>
+                    Run decision analysis
+                  </button>
+                  <label
+                    class="flex items-center gap-2 text-xs text-slate-400 cursor-pointer select-none"
+                  >
+                    <input
+                      id="preferred-option-checkbox"
+                      type="checkbox"
+                      class="rounded border-slate-700 bg-slate-900 text-sky-500 focus:ring-sky-500/60"
+                    />
+                    Treat first strategy as currently preferred
+                  </label>
+                </div>
+              </form>
+            </div>
+
+            <div class="space-y-4">
+              <section
+                class="bg-slate-900/80 border border-slate-800 rounded-2xl shadow-xl shadow-slate-950/60 p-4 sm:p-5 space-y-3"
+              >
+                <div class="flex items-center justify-between gap-2">
+                  <div>
+                    <h2 class="font-semibold text-sm flex items-center gap-2">
+                      Pros / cons matrix
+                      <span
+                        class="text-[10px] uppercase tracking-wide rounded-full px-2 py-0.5 border border-emerald-500/40 text-emerald-300/90 bg-emerald-500/5 hidden"
+                        id="pros-cons-pill"
+                      >
+                        updated
+                      </span>
+                    </h2>
+                    <p class="text-[11px] text-slate-400 mt-0.5">
+                      Structured view of arguments by strategy / option.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  id="pros-cons-empty"
+                  class="text-xs text-slate-500 border border-dashed border-slate-700 rounded-xl px-3 py-3"
+                >
+                  Run an analysis to see a pros/cons matrix for each option.
+                </div>
+                <div
+                  id="pros-cons-content"
+                  class="hidden space-y-3 text-xs max-h-[320px] overflow-y-auto custom-scroll"
+                ></div>
+              </section>
+
+              <section
+                class="bg-slate-900/80 border border-slate-800 rounded-2xl shadow-xl shadow-slate-950/60 p-4 sm:p-5 space-y-3"
+              >
+                <div class="flex flex-wrap items-center justify-between gap-2">
+                  <div>
+                    <h3 class="font-semibold text-xs uppercase tracking-wide">
+                      Decision suggestion
+                    </h3>
+                    <span
+                      id="bias-count"
+                      class="text-[10px] rounded-full border border-slate-700 px-2 py-0.5 text-slate-400"
+                      >0 signals</span
+                    >
+                  </div>
+                  <div
+                    id="bias-list"
+                    class="text-xs text-slate-400 border border-slate-800 rounded-xl px-3 py-3 max-h-40 overflow-y-auto custom-scroll"
+                  >
+                    I’ll highlight language that hints at confirmation bias,
+                    sunk cost fallacy, or missing perspectives in your railway
+                    planning.
+                  </div>
+                </div>
+                <div class="space-y-2">
+                  <div class="flex items-center justify-between">
+                    <h3 class="font-semibold text-xs uppercase tracking-wide">
+                      Risk simulation (service & stock risk)
+                    </h3>
+                    <span
+                      id="risk-hint"
+                      class="text-[10px] text-slate-500"
+                    ></span>
+                  </div>
+                  <div
+                    id="risk-cards"
+                    class="grid grid-cols-1 gap-2 text-xs max-h-40 overflow-y-auto custom-scroll"
+                  >
+                    <div
+                      class="border border-dashed border-slate-700 rounded-xl px-3 py-3 text-slate-400"
+                    >
+                      After analysis, you’ll see best / typical / worst case
+                      bands for each strategy in terms of service reliability
+                      and stock risk.
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section
+                class="bg-slate-900/80 border border-slate-800 rounded-2xl shadow-xl shadow-slate-950/60 p-4 sm:p-5 space-y-3"
+              >
+                <div class="flex flex-wrap items-center justify-between gap-2">
+                  <div>
+                    <h3 class="font-semibold text-xs uppercase tracking-wide">
+                      Decision suggestion
+                    </h3>
+                    <p class="text-[11px] text-slate-400 mt-0.5">
+                      A recommendation, not a mandate. Use it to stress‑test
+                      your own judgment for railway operations.
+                    </p>
+                  </div>
+                  <div
+                    id="confidence-pill"
+                    class="hidden text-[11px] rounded-full px-3 py-1 border border-slate-700 text-slate-200"
+                  ></div>
+                </div>
+                <div
+                  id="suggestion-box"
+                  class="text-sm text-slate-300 border border-dashed border-slate-700 rounded-xl px-3 py-3"
+                >
+                  Once you run an analysis, I’ll outline the most defensible
+                  option and why.
+                </div>
+              </section>
+
+<section
+                class="bg-slate-900/80 border border-slate-800 rounded-2xl shadow-xl shadow-slate-950/60 p-4 sm:p-5 space-y-3"
+              >
+                <div class="flex items-center justify-between">
+                  <h3 class="font-semibold text-xs uppercase tracking-wide">
+                    Decision tree
+                  </h3>
+                  <span
+                    class="text-[10px] text-slate-500"
+                    id="tree-hint"
+                  ></span>
+                </div>
+                <div
+                  id="tree-content"
+                  class="text-xs text-slate-400 border border-slate-800 rounded-xl px-3 py-3 max-h-40 overflow-y-auto custom-scroll min-h-[8rem]"
+                >
+                  I'll translate the analysis into a simple decision path you
+                  can explain to railway stakeholders in 30 seconds.
+                </div>
+              </section>
+
+              <section
+                id="scenario-analysis-section"
+                class="bg-slate-900/80 border border-slate-800 rounded-2xl shadow-xl shadow-slate-950/60 p-4 sm:p-5 space-y-4 hidden"
+              >
+                <div class="flex items-center justify-between gap-2">
+                  <div>
+                    <h2 class="font-semibold text-sm flex items-center gap-2">
+                      Financial Scenario Analysis
+                      <span
+                        class="text-[10px] uppercase tracking-wide rounded-full px-2 py-0.5 border border-violet-500/40 text-violet-300/90 bg-violet-500/5"
+                        >AI powered</span
+                      >
+                    </h2>
+                    <p class="text-[11px] text-slate-400 mt-0.5">
+                      Profit forecasts, budget & deadline impact across 3 scenarios.
+                    </p>
+                  </div>
+                </div>
+                
+                <div id="profit-forecast-container" class="space-y-3">
+                  <h3 class="text-xs font-medium text-slate-300 uppercase tracking-wide">Profit Forecast (3 Scenarios)</h3>
+                  <div id="profit-forecast-content" class="space-y-2"></div>
+                </div>
+
+                <div id="budget-impact-container" class="space-y-2">
+                  <h3 class="text-xs font-medium text-slate-300 uppercase tracking-wide">Budget Impact Analysis</h3>
+                  <div id="budget-impact-content" class="grid grid-cols-1 gap-2"></div>
+                </div>
+
+                <div id="deadline-impact-container" class="space-y-2">
+                  <h3 class="text-xs font-medium text-slate-300 uppercase tracking-wide">Deadline Impact Prediction</h3>
+                  <div id="deadline-impact-content" class="grid grid-cols-1 gap-2"></div>
+                </div>
+              </section>
+
+              <section
+                id="monte-carlo-section"
+                class="bg-slate-900/80 border border-slate-800 rounded-2xl shadow-xl shadow-slate-950/60 p-4 sm:p-5 space-y-3 hidden"
+              >
+                <div class="flex items-center justify-between gap-2">
+                  <div>
+                    <h2 class="font-semibold text-sm flex items-center gap-2">
+                      Monte Carlo Simulation
+                      <span
+                        class="text-[10px] uppercase tracking-wide rounded-full px-2 py-0.5 border border-amber-500/40 text-amber-300/90 bg-amber-500/5"
+                        >500 iterations</span
+                      >
+                    </h2>
+                    <p class="text-[11px] text-slate-400 mt-0.5">
+                      Probabilistic outcome analysis with confidence intervals.
+                    </p>
+                  </div>
+                </div>
+                <div id="monte-carlo-content" class="space-y-2"></div>
+              </section>
+
+              <section
+                id="whatif-section"
+                class="bg-slate-900/80 border border-slate-800 rounded-2xl shadow-xl shadow-slate-950/60 p-4 sm:p-5 space-y-3"
+              >
+                <div class="flex items-center justify-between gap-2">
+                  <div>
+                    <h2 class="font-semibold text-sm flex items-center gap-2">
+                      What-If Scenario Simulator
+                      <span
+                        class="text-[10px] uppercase tracking-wide rounded-full px-2 py-0.5 border border-cyan-500/40 text-cyan-300/90 bg-cyan-500/5"
+                        >Interactive</span
+                      >
+                    </h2>
+                    <p class="text-[11px] text-slate-400 mt-0.5">
+                      Ask "What if we increase price by 10%?" or similar questions.
+                    </p>
+                  </div>
+                </div>
+                <div class="flex gap-2">
+                  <input
+                    id="whatif-input"
+                    type="text"
+                    placeholder="e.g. What if we increase price by 10%? or What if lead time doubles?"
+                    class="flex-1 rounded-xl bg-slate-950 border border-slate-700/80 px-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-cyan-500/70 focus:border-cyan-400/60 placeholder-slate-500"
+                  />
+                  <button
+                    id="whatif-button"
+                    class="inline-flex items-center justify-center gap-2 rounded-full bg-cyan-500/90 hover:bg-cyan-400 text-slate-950 text-xs font-medium px-4 py-2 transition-colors disabled:opacity-60"
+                  >
+                    Simulate
+                  </button>
+                </div>
+                <div
+                  id="whatif-spinner"
+                  class="hidden h-4 w-4 border-2 border-cyan-500 border-t-transparent rounded-full animate-spin"
+                ></div>
+                <div
+                  id="whatif-result"
+                  class="text-xs text-slate-300 border border-slate-800 rounded-xl px-3 py-3 hidden"
+                ></div>
+              </section>
+
+              <section
+                id="shap-section"
+                class="bg-slate-900/80 border border-slate-800 rounded-2xl shadow-xl shadow-slate-950/60 p-4 sm:p-5 space-y-3 hidden"
+              >
+                <div class="flex items-center justify-between gap-2">
+                  <div>
+                    <h2 class="font-semibold text-sm flex items-center gap-2">
+                      Explainable AI (SHAP Analysis)
+                      <span
+                        class="text-[10px] uppercase tracking-wide rounded-full px-2 py-0.5 border border-emerald-500/40 text-emerald-300/90 bg-emerald-500/5"
+                        >XAI</span
+                      >
+                    </h2>
+                    <p class="text-[11px] text-slate-400 mt-0.5">
+                      Feature contribution breakdown for each option.
+                    </p>
+                  </div>
+                </div>
+                <div id="shap-content" class="space-y-3"></div>
+              </section>
+
+              <section
+                id="history-section"
+                class="bg-slate-900/80 border border-slate-800 rounded-2xl shadow-xl shadow-slate-950/60 p-4 sm:p-5 space-y-3"
+              >
+                <div class="flex items-center justify-between gap-2">
+                  <div>
+                    <h2 class="font-semibold text-sm flex items-center gap-2">
+                      Decision History & Learning
+                      <span
+                        class="text-[10px] uppercase tracking-wide rounded-full px-2 py-0.5 border border-indigo-500/40 text-indigo-300/90 bg-indigo-500/5"
+                        >RL Enabled</span
+                      >
+                    </h2>
+                    <p class="text-[11px] text-slate-400 mt-0.5">
+                      Past decisions, outcomes, and adaptive recommendations.
+                    </p>
+                  </div>
+                  <button
+                    id="refresh-history"
+                    class="inline-flex items-center gap-1 rounded-full border border-slate-700 px-3 py-1 text-[11px] text-slate-200 hover:border-indigo-500 hover:text-indigo-300 transition-colors"
+                  >
+                    ↻ Refresh
+                  </button>
+                </div>
+                <div
+                  id="history-empty"
+                  class="text-xs text-slate-500 border border-dashed border-slate-700 rounded-xl px-3 py-3"
+                >
+                  No past decisions yet. Run an analysis to start building the learning history.
+                </div>
+                <div id="history-content" class="space-y-2 max-h-48 overflow-y-auto custom-scroll hidden"></div>
+                <div id="outcome-tracking" class="hidden space-y-2 pt-2 border-t border-slate-800">
+                  <h3 class="text-xs font-medium text-slate-300 uppercase tracking-wide">Track Outcome</h3>
+                  <select
+                    id="outcome-decision-select"
+                    class="w-full rounded-xl bg-slate-950 border border-slate-700/80 px-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-indigo-500/70"
+                  >
+                    <option value="">Select a decision...</option>
+                  </select>
+                  <div class="flex gap-2">
+                    <select
+                      id="outcome-rating"
+                      class="flex-1 rounded-xl bg-slate-950 border border-slate-700/80 px-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-indigo-500/70"
+                    >
+                      <option value="">Rate outcome...</option>
+                      <option value="5">Excellent (+2)</option>
+                      <option value="3">Good (+1)</option>
+                      <option value="0">Neutral (0)</option>
+                      <option value="-1">Poor (-1)</option>
+                      <option value="-2">Failed (-2)</option>
+                    </select>
+                    <button
+                      id="save-outcome"
+                      class="inline-flex items-center justify-center rounded-full bg-indigo-500/90 hover:bg-indigo-400 text-slate-950 text-xs font-medium px-4 py-2 transition-colors"
+                    >
+                      Save
+                    </button>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+            </div>
+            <div class="md:col-span-4">
+              <div class="sticky top-20">
+                <img src="image.jpg" alt="Decision Support" class="w-full h-auto rounded-2xl border border-slate-800 shadow-xl shadow-slate-950/60 object-cover" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer
+        class="border-t border-slate-900/80 bg-gradient-to-r from-slate-950 via-slate-950 to-slate-950/90"
+      >
+        <div
+          class="max-w-6xl mx-auto px-4 py-3 text-[11px] text-slate-500 flex flex-wrap items-center justify-between gap-2"
+        >
+          <span
+            >Railway Inventory Decision Copilot is a heuristic assistant.
+            Always apply judgment, safety rules, and local context.</span
+          >
+          <span id="footer-meta"></span>
+        </div>
+      </footer>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+  </html>
+

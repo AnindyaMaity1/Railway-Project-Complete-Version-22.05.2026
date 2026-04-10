@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./server
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./server:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - DATABASE_URL=sqlite:/app/database/railway-qr-system.sqlite
+      - JWT_SECRET=your_jwt_secret_key_12345
+      - JWT_EXPIRES_IN=1d
+      - SERVER_BASE_URL=http://localhost:5000
+      - AI_SERVICE_URL=http://ai-service:5002
+
+  frontend:
+    build: ./client
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./client:/app
+      - /app/node_modules
+    depends_on:
+      - backend
+
+  ai-service:
+    build: ./ai-service
+    ports:
+      - "5002:5002"
+    volumes:
+      - ./ai-service:/app
+    environment:
+      - FLASK_ENV=development
+
+volumes:
+  database_data:

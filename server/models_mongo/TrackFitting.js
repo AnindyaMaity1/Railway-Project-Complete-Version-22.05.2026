@@ -1,0 +1,52 @@
+const { Schema } = require('mongoose');
+
+module.exports = new Schema({
+  qrCode: { type: String, index: true },
+  itemType: { type: String },
+  itemSubType: { type: String },
+  serialNumber: { type: String, index: true, unique: false },
+  batchNumber: { type: String },
+  lotNumber: { type: String },
+  vendorId: { type: Schema.Types.Mixed },
+  vendorName: { type: String },
+  vendorCode: { type: String },
+  manufacturingDate: { type: Date },
+  manufacturingLocation: { type: String },
+  machineId: { type: String },
+  operatorId: { type: String },
+  material: { type: String },
+  dimensions: {
+    length: { type: Number },
+    width: { type: Number },
+    height: { type: Number },
+    unit: { type: String }
+  },
+  weight: { type: Number },
+  grade: { type: String },
+  standard: { type: String },
+  qualityGrade: { type: String },
+  warrantyEndDate: { type: Date },
+  inspections: { type: Schema.Types.Mixed, default: [] },
+  maintenance: { type: Schema.Types.Mixed, default: [] },
+  status: { type: String },
+  currentLocation: { type: String },
+  locationCoords: {
+    latitude: { type: Number },
+    longitude: { type: Number }
+  },
+  trackSectionKm: { type: Number },
+  serviceLife: { type: Number },
+  failureDate: { type: Date },
+  failureReason: { type: String },
+  replacementDate: { type: Date },
+  createdBy: { type: String },
+  lastModifiedBy: { type: String },
+  fromStation: { type: String },
+  toStation: { type: String },
+  fromStationLatitude: { type: Number },
+  fromStationLongitude: { type: Number },
+  toStationLatitude: { type: Number },
+  toStationLongitude: { type: Number },
+  version: { type: Number, default: 1 },
+  extra: { type: Schema.Types.Mixed }
+}, { timestamps: true });

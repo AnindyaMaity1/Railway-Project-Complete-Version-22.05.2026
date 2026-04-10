@@ -1,0 +1,420 @@
+:root {
+  --app-blue: #1e88e5;
+  --app-blue-dark: #0d47a1;
+  --app-yellow: #ffca28;
+  --app-green: #43a047;
+  --app-red: #e53935;
+  --app-black: #050816;
+  --app-surface: #0b1020;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #ffffff;
+  color: #1f2933;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.App {
+  text-align: left;
+}
+
+.main-content {
+  margin-top: 0;
+  min-height: calc(100vh - 56px);
+  background: transparent;
+}
+
+.login-page {
+  background: radial-gradient(circle at top left, var(--app-blue) 0, var(--app-blue-dark) 40%, #000 100%);
+}
+
+.card {
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+  background-color: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  color: #1f2933;
+}
+
+.btn {
+  border-radius: 6px;
+  font-weight: 500;
+  border: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--app-blue) 0%, var(--app-yellow) 100%);
+  color: #050816;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background: linear-gradient(135deg, var(--app-yellow) 0%, var(--app-blue) 100%);
+  color: #050816;
+}
+
+.btn-success {
+  background: linear-gradient(135deg, var(--app-green) 0%, #a5d6a7 100%);
+  color: #050816;
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, var(--app-red) 0%, #ef9a9a 100%);
+}
+
+.form-control {
+  border-radius: 6px;
+  border: 1px solid #dee2e6;
+  background-color: #ffffff;
+  color: #1f2933;
+}
+
+.form-control:focus {
+  border-color: var(--app-blue);
+  box-shadow: 0 0 0 0.2rem rgba(30, 136, 229, 0.45);
+}
+
+.table th {
+  border-top: none;
+  font-weight: 600;
+  color: #495057;
+}
+
+.badge {
+  font-size: 0.75em;
+  font-weight: 500;
+  border-radius: 999px;
+  padding: 0.35rem 0.7rem;
+}
+
+/* Dashboard feature cards */
+.feature-card {
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  border-radius: 18px;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+  border-color: rgba(37, 99, 235, 0.35);
+}
+
+.feature-card .fs-1 {
+  width: 56px;
+  height: 56px;
+  border-radius: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f3f4ff;
+}
+
+.feature-card h5 {
+  font-size: 1.05rem;
+}
+
+.feature-explain-btn {
+  border-radius: 8px;
+  font-size: 0.8rem;
+}
+
+/* Hero section with subtle railway grid */
+.hero-railway {
+  background-color: #f3f6ff;
+  background-image: radial-gradient(circle at 1px 1px, rgba(148, 163, 184, 0.25) 1px, transparent 0);
+  background-size: 24px 24px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.hero-intro-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+}
+
+.hero-intro-title {
+  font-size: 2.5rem;
+}
+
+.hero-intro-subtitle {
+  font-size: 1.5rem;
+  color: #2563eb;
+}
+
+.hero-intro-text {
+  max-width: 620px;
+  font-size: 1rem;
+  color: #4b5563;
+}
+
+.section-title-underline {
+  display: inline-block;
+  position: relative;
+  padding-bottom: 0.25rem;
+  font-weight: 800;
+  color: #111827;
+}
+
+.section-title-underline::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  border-radius: 999px;
+  background-image: linear-gradient(
+    90deg,
+    var(--app-yellow) 0%,
+    var(--app-yellow) 33%,
+    #d1d5db 33%,
+    #d1d5db 66%,
+    var(--app-green) 66%,
+    var(--app-green) 100%
+  );
+}
+
+.modal-gotit-btn,
+.modal-gotit-btn:hover,
+.modal-gotit-btn:focus {
+  border-color: var(--app-green) !important;
+  color: var(--app-green) !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* QR Generator serial generate button (grey, no hover change) */
+.serial-generate-btn,
+.serial-generate-btn:hover,
+.serial-generate-btn:focus {
+  background-color: #e5e7eb !important;
+  color: #111827 !important;
+  border-color: #e5e7eb !important;
+  box-shadow: none !important;
+}
+
+/* Bulk mode toggle button - always dark style */
+.bulk-toggle-btn,
+.bulk-toggle-btn:hover,
+.bulk-toggle-btn:focus {
+  background-color: #111827 !important;
+  color: #ffffff !important;
+  border-color: #111827 !important;
+  box-shadow: none !important;
+}
+
+/* Station suggestions dropdown */
+.station-suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0 0 0.5rem 0.5rem;
+  max-height: 180px;
+  overflow-y: auto;
+}
+
+.station-suggestion-item {
+  padding: 0.35rem 0.75rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.station-suggestion-item:hover {
+  background-color: #f3f4ff;
+}
+
+/* QR Scanner textarea - fixed height, no resize */
+.qrscan-textarea {
+  resize: none;
+}
+
+/* Mobile scanner buttons - fixed colors, no hover change */
+.mobile-start-btn,
+.mobile-start-btn:hover,
+.mobile-start-btn:focus {
+  background-color: var(--app-green) !important;
+  color: #ffffff !important;
+  border-color: var(--app-green) !important;
+  box-shadow: none !important;
+}
+
+.mobile-manual-btn,
+.mobile-manual-btn:hover,
+.mobile-manual-btn:focus {
+  background-color: var(--app-red) !important;
+  color: #ffffff !important;
+  border-color: var(--app-red) !important;
+  box-shadow: none !important;
+}
+
+.mobile-browse-btn,
+.mobile-browse-btn:hover,
+.mobile-browse-btn:focus {
+  background-color: #374151 !important;
+  color: #ffffff !important;
+  border-color: #374151 !important;
+  box-shadow: none !important;
+}
+
+/* Hero buttons - fixed solid colors, no hover color flip */
+.hero-primary-btn,
+.hero-primary-btn:hover,
+.hero-primary-btn:focus {
+  background-color: var(--app-blue) !important;
+  color: #ffffff !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.hero-secondary-btn,
+.hero-secondary-btn:hover,
+.hero-secondary-btn:focus {
+  background-color: var(--app-green) !important;
+  color: #ffffff !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Dashboard stat cards */
+.stat-card-modern {
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+}
+
+.spinner-border-sm {
+  width: 1rem;
+  height: 1rem;
+}
+
+.text-muted {
+  color: #6c757d !important;
+}
+
+.bg-primary {
+  background-color: var(--app-blue) !important;
+}
+
+.bg-success {
+  background-color: var(--app-green) !important;
+}
+
+.bg-warning {
+  background-color: var(--app-yellow) !important;
+  color: #050816 !important;
+}
+
+.bg-danger {
+  background-color: var(--app-red) !important;
+}
+
+.bg-info {
+  background-color: #0dcaf0 !important;
+}
+
+.bg-secondary {
+  background-color: #6c757d !important;
+}
+
+.bg-dark {
+  background-color: #020617 !important;
+}
+
+.navbar.bg-primary {
+  background: linear-gradient(135deg, var(--app-blue) 0%, var(--app-yellow) 100%) !important;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+.navbar .nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  white-space: nowrap;
+}
+
+.navbar .nav-link span {
+  display: inline-flex;
+  align-items: center;
+}
+
+.brand-ai-tag {
+  font-size: 0.8rem;
+  padding: 0.25rem 0.7rem;
+}
+
+/* Admin/user dropdown button style - always look like hover */
+.navbar .dropdown-toggle,
+.navbar .dropdown-toggle:hover,
+.navbar .dropdown-toggle:focus,
+.navbar .dropdown-toggle:active {
+  background-color: #ffffff !important;
+  color: #111827 !important;
+  border-color: #ffffff !important;
+  box-shadow: none !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 0.75rem;
+  }
+  
+  .card {
+    margin-bottom: 1rem;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.16);
+  }
+  
+  .table-responsive {
+    font-size: 0.875rem;
+  }
+}
+
+/* Print styles */
+@media print {
+  .navbar,
+  .btn,
+  .modal {
+    display: none !important;
+  }
+  
+  .main-content {
+    margin-top: 0 !important;
+  }
+  
+  .card {
+    box-shadow: none !important;
+    border: 1px solid #dee2e6 !important;
+  }
+}

@@ -1,0 +1,886 @@
+[
+  {
+    "id": "mm20alglpmukhr",
+    "createdAt": "2026-02-25T12:24:08.229Z",
+    "payload": {
+      "title": "part change",
+      "context": "part change before monsoon season",
+      "notes": "",
+      "options": [
+        {
+          "id": "opt-1",
+          "label": "low cost"
+        }
+      ],
+      "preferredOptionId": "opt-1"
+    },
+    "analysisSummary": {
+      "title": "part change",
+      "suggestedOptionLabel": "low cost",
+      "confidence": 0.2
+    },
+    "outcome": {
+      "reward": 3,
+      "recordedAt": "2026-02-25T13:12:16.428Z"
+    }
+  },
+  {
+    "id": "mm211nzp2s2xuy",
+    "createdAt": "2026-02-25T12:45:11.221Z",
+    "payload": {
+      "title": "Change of railway parts",
+      "context": "Change of railway parts before monsoon seasons",
+      "notes": "+Option A: Government is not keen not increasing the budget\n-Option B: High labour cost",
+      "options": [
+        {
+          "id": "opt-1",
+          "label": "Optimal cost"
+        },
+        {
+          "id": "opt-2",
+          "label": "Optimal labour cost"
+        }
+      ],
+      "preferredOptionId": "opt-1"
+    },
+    "analysisSummary": {
+      "title": "Change of railway parts",
+      "suggestedOptionLabel": "Optimal cost",
+      "confidence": 0.9
+    },
+    "outcome": null
+  },
+  {
+    "id": "mm21yjpbyjv895",
+    "createdAt": "2026-02-25T13:10:45.311Z",
+    "payload": {
+      "title": "Change of railway parts",
+      "context": "Change of railway parts",
+      "notes": "-Option A: Government is not keen for increasing cost.\n-Option B: Labour not available",
+      "options": [
+        {
+          "id": "opt-1",
+          "label": "Low cost"
+        },
+        {
+          "id": "opt-3",
+          "label": "good number of men for the task"
+        }
+      ],
+      "preferredOptionId": "opt-1"
+    },
+    "analysisSummary": {
+      "title": "Change of railway parts",
+      "suggestedOptionLabel": "Low cost",
+      "confidence": 0.6
+    },
+    "outcome": null
+  },
+  {
+    "id": "mm2i4z5rbi9rmr",
+    "createdAt": "2026-02-25T20:43:39.135Z",
+    "payload": {
+      "title": "change train part",
+      "context": "change part before rainy season",
+      "notes": "-Option A: The government is not keen on increasing the budget",
+      "options": [
+        {
+          "id": "opt-1",
+          "label": "Low cost"
+        }
+      ],
+      "preferredOptionId": "opt-1"
+    },
+    "analysisSummary": {
+      "title": "change train part",
+      "suggestedOptionLabel": "Low cost",
+      "confidence": 0.55
+    },
+    "outcome": null
+  },
+  {
+    "id": "mm2ifjz4rplf78",
+    "createdAt": "2026-02-25T20:51:52.672Z",
+    "payload": {
+      "title": "Change of parts",
+      "context": "Change of parts before rainy season",
+      "notes": "+ Option A: The government is not keen on increasing the budget.",
+      "options": [
+        {
+          "id": "opt-1",
+          "label": "Low Cost"
+        }
+      ],
+      "preferredOptionId": "opt-1"
+    },
+    "analysisSummary": {
+      "title": "Change of parts",
+      "suggestedOptionLabel": "Low Cost",
+      "confidence": 0.55
+    },
+    "outcome": null
+  },
+  {
+    "id": "mm2io99ni37hll",
+    "createdAt": "2026-02-25T20:58:38.699Z",
+    "payload": {
+      "title": "Change of parts",
+      "context": "Change of parts before the rainy season",
+      "notes": "",
+      "options": [
+        {
+          "id": "opt-4",
+          "label": "Low Cost"
+        }
+      ]
+    },
+    "analysisSummary": {
+      "title": "Change of parts",
+      "suggestedOptionLabel": "Low Cost",
+      "confidence": 0.7250000000000001
+    },
+    "outcome": null
+  },
+  {
+    "id": "mm2iq169sxjm6v",
+    "createdAt": "2026-02-25T21:00:01.521Z",
+    "payload": {
+      "title": "Change of parts",
+      "context": "Change of parts before the rainy season",
+      "notes": "-Option A: the government is not keen on increasing the budget",
+      "options": [
+        {
+          "id": "opt-4",
+          "label": "Low Cost"
+        }
+      ],
+      "preferredOptionId": "opt-4"
+    },
+    "analysisSummary": {
+      "title": "Change of parts",
+      "suggestedOptionLabel": "Low Cost",
+      "confidence": 0.55
+    },
+    "outcome": null
+  },
+  {
+    "id": "mm2irypf5q99hw",
+    "createdAt": "2026-02-25T21:01:31.635Z",
+    "payload": {
+      "title": "Change of parts",
+      "context": "Change of parts before rainy season",
+      "notes": "-Option A: The government is not accepting the increasing budget.",
+      "options": [
+        {
+          "id": "opt-1",
+          "label": "Low Cost"
+        }
+      ],
+      "preferredOptionId": "opt-1"
+    },
+    "analysisSummary": {
+      "title": "Change of parts",
+      "suggestedOptionLabel": "Low Cost",
+      "confidence": 0.55
+    },
+    "outcome": null
+  },
+  {
+    "id": "mm2jvzlt7x85ut",
+    "createdAt": "2026-02-25T21:32:39.041Z",
+    "payload": {
+      "title": "Cost Change",
+      "context": "Parts Change before the rainy season.",
+      "notes": "- Option A: The government is not keen on increasing the budget.",
+      "options": [
+        {
+          "id": "opt-1",
+          "label": "Low Cost"
+        }
+      ],
+      "preferredOptionId": "opt-1"
+    },
+    "analysisSummary": {
+      "title": "Cost Change",
+      "suggestedOptionLabel": "Low Cost",
+      "confidence": 0.55
+    },
+    "outcome": null
+  },
+  {
+    "id": "mm2jx7jqnyoly8",
+    "createdAt": "2026-02-25T21:33:35.990Z",
+    "payload": {
+      "title": "Cost Change",
+      "context": "Parts Change before the rainy season.",
+      "notes": "-Option A: The government is not keen on increasing the budget.",
+      "options": [
+        {
+          "id": "opt-1",
+          "label": "Low Cost"
+        }
+      ],
+      "preferredOptionId": "opt-1"
+    },
+    "analysisSummary": {
+      "title": "Cost Change",
+      "suggestedOptionLabel": "Low Cost",
+      "confidence": 0.55
+    },
+    "outcome": null
+  },
+  {
+    "id": "mm2jy9mx5i6xar",
+    "createdAt": "2026-02-25T21:34:25.353Z",
+    "payload": {
+      "title": "Cost Change",
+      "context": "Parts Change before the rainy season.",
+      "notes": "-Option A: The government is not keen on increasing the budget.\n+Option B: The workers are available",
+      "options": [
+        {
+          "id": "opt-1",
+          "label": "Low Cost"
+        }
+      ],
+      "preferredOptionId": "opt-1"
+    },
+    "analysisSummary": {
+      "title": "Cost Change",
+      "suggestedOptionLabel": "Low Cost",
+      "confidence": 0.7250000000000001
+    },
+    "outcome": null
+  },
+  {
+    "id": "mm2jzs2yw231ob",
+    "createdAt": "2026-02-25T21:35:35.914Z",
+    "payload": {
+      "title": "Cost Change",
+      "context": "Parts Change before the rainy season.",
+      "notes": "-Option A: The government is not keen on increasing the budget.\n+Option B: The workers are available.\n-Option C: Stock is not available at the good vendors.",
+      "options": [
+        {
+          "id": "opt-1",
+          "label": "Low Cost"
+        }
+      ],
+      "preferredOptionId": "opt-1"
+    },
+    "analysisSummary": {
+      "title": "Cost Change",
+      "suggestedOptionLabel": "Low Cost",
+      "confidence": 0.55
+    },
+    "outcome": null
+  },
+  {
+    "id": "mm2k0bv4o5xlh3",
+    "createdAt": "2026-02-25T21:36:01.552Z",
+    "payload": {
+      "title": "Cost Change",
+      "context": "Parts Change before the rainy season.",
+      "notes": "-Option A: The government is not keen on increasing the budget.\n+Option B: The workers are available.\n-Option C: Stock is not available at the good vendors.\n+Option D: I Am Available",
+      "options": [
+        {
+          "id": "opt-1",
+          "label": "Low Cost"
+        }
+      ],
+      "preferredOptionId": "opt-1"
+    },
+    "analysisSummary": {
+      "title": "Cost Change",
+      "suggestedOptionLabel": "Low Cost",
+      "confidence": 0.9
+    },
+    "outcome": null
+  },
+  {
+    "id": "mm2kk7yywxefpc",
+    "createdAt": "2026-02-25T21:51:29.626Z",
+    "payload": {
+      "title": "Safety Stock Strategy for Rail Fasteners",
+      "context": "We manage railway track fittings across 5 depots in the Northern zone. \nCurrent inventory levels are low due to supply chain delays. \nWe need to decide on a restocking strategy before the monsoon season.\nBudget constraint: ₹50 lakhs",
+      "notes": "+ Option A: Lower total inventory cost through consolidation\n+ Option A: Easier quality control from single source\n- Option A: Higher transportation costs to distant depots\n- Option A: Single point of failure risk\n+ Option B: Faster delivery to local depots\n+ Option B: Reduced transportation time\n- Option B: Higher overall inventory costs\n- Option B: More complex management across locations\n+ Option C: No upfront inventory investment\n+ Option C: Vendor expertise in demand forecasting\n- Option C: Less control over inventory\n- Option C: Dependency on vendor reliability",
+      "preferredOptionId": "opt-1",
+      "options": [
+        {
+          "id": "opt-1",
+          "label": "Option A: Centralized depot with high safety stock"
+        },
+        {
+          "id": "opt-2",
+          "label": "Option B: Distributed local buffers at each depot"
+        },
+        {
+          "id": "opt-3",
+          "label": "Option C: Vendor-managed inventory with weekly replenishment"
+        }
+      ]
+    },
+    "analysisSummary": {
+      "title": "Safety Stock Strategy for Rail Fasteners",
+      "suggestedOptionLabel": "Option A: Centralized depot with high safety stock",
+      "confidence": 0.55
+    },
+    "outcome": null
+  },
+  {
+    "id": "mm2kmvx3vbghy5",
+    "createdAt": "2026-02-25T21:53:33.975Z",
+    "payload": {
+      "title": "Safety Stock Strategy for Rail Fasteners",
+      "context": "We manage railway track fittings across 5 depots in the Northern zone. \nCurrent inventory levels are low due to supply chain delays. \nWe need to decide on a restocking strategy before the monsoon season.\nBudget constraint: ₹50 lakhs",
+      "notes": "+ Option A: Lower total inventory cost through consolidation\n+ Option A: Easier quality control from single source\n- Option A: Higher transportation costs to distant depots\n- Option A: Single point of failure risk\n+ Option B: Faster delivery to local depots\n+ Option B: Reduced transportation time\n- Option B: Higher overall inventory costs\n- Option B: More complex management across locations\n+ Option C: No upfront inventory investment\n+ Option C: Vendor expertise in demand forecasting\n- Option C: Less control over inventory\n- Option C: Dependency on vendor reliability",
+      "preferredOptionId": "opt-1",
+      "options": [
+        {
+          "id": "opt-1",
+          "label": "Option A: Centralized depot with high safety stock"
+        },
+        {
+          "id": "opt-2",
+          "label": "Option B: Distributed local buffers at each depot"
+        },
+        {
+          "id": "opt-3",
+          "label": "Option C: Vendor-managed inventory with weekly replenishment"
+        }
+      ]
+    },
+    "analysisSummary": {
+      "title": "Safety Stock Strategy for Rail Fasteners",
+      "suggestedOptionLabel": "Option A: Centralized depot with high safety stock",
+      "confidence": 0.55
+    },
+    "outcome": null
+  },
+  {
+    "id": "mm2l4h5qbx28sj",
+    "createdAt": "2026-02-25T22:07:14.654Z",
+    "payload": {
+      "title": "Safety Stock Strategy for Rail Fasteners",
+      "context": "We manage railway track fittings across 5 depots in the Northern zone. \nCurrent inventory levels are low due to supply chain delays. \nWe need to decide on a restocking strategy before the monsoon season.\nBudget constraint: ₹50 lakhs",
+      "notes": "+ Option A: Lower total inventory cost through consolidation\n+ Option A: Easier quality control from single source\n- Option A: Higher transportation costs to distant depots\n- Option A: Single point of failure risk\n+ Option B: Faster delivery to local depots\n+ Option B: Reduced transportation time\n- Option B: Higher overall inventory costs\n- Option B: More complex management across locations\n+ Option C: No upfront inventory investment\n+ Option C: Vendor expertise in demand forecasting\n- Option C: Less control over inventory\n- Option C: Dependency on vendor reliability",
+      "preferredOptionId": "opt-1",
+      "options": [
+        {
+          "id": "opt-1",
+          "label": "Option A: Centralized depot with high safety stock"
+        },
+        {
+          "id": "opt-2",
+          "label": "Option B: Distributed local buffers at each depot"
+        }
+      ]
+    },
+    "analysisSummary": {
+      "title": "Safety Stock Strategy for Rail Fasteners",
+      "suggestedOptionLabel": "Option A: Centralized depot with high safety stock",
+      "confidence": 0.55
+    },
+    "outcome": null
+  },
+  {
+    "id": "mm2l6m8ybggtn6",
+    "createdAt": "2026-02-25T22:08:54.562Z",
+    "payload": {
+      "title": "Safety Stock Strategy for Rail Fasteners",
+      "context": "We manage railway track fittings across 5 depots in the Northern zone. \nCurrent inventory levels are low due to supply chain delays. \nWe need to decide on a restocking strategy before the monsoon season.\nBudget constraint: ₹50 lakhs",
+      "notes": "+ Option A: Lower total inventory cost through consolidation\n+ Option A: Easier quality control from single source\n- Option A: Higher transportation costs to distant depots\n- Option A: Single point of failure risk\n+ Option B: Faster delivery to local depots\n+ Option B: Reduced transportation time\n- Option B: Higher overall inventory costs\n- Option B: More complex management across locations\n+ Option C: No upfront inventory investment\n+ Option C: Vendor expertise in demand forecasting\n- Option C: Less control over inventory\n- Option C: Dependency on vendor reliability",
+      "preferredOptionId": "opt-1",
+      "options": [
+        {
+          "id": "opt-1",
+          "label": "Option A: Centralized depot with high safety stock"
+        },
+        {
+          "id": "opt-2",
+          "label": "Option B: Distributed local buffers at each depot"
+        },
+        {
+          "id": "opt-3",
+          "label": "Option C: Vendor-managed inventory with weekly replenishment"
+        }
+      ]
+    },
+    "analysisSummary": {
+      "title": "Safety Stock Strategy for Rail Fasteners",
+      "suggestedOptionLabel": "Option A: Centralized depot with high safety stock",
+      "confidence": 0.55
+    },
+    "outcome": null
+  },
+  {
+    "id": "mm2mrfquqvsmb5",
+    "createdAt": "2026-02-25T22:53:05.526Z",
+    "payload": {
+      "title": "Safety Stock Strategy for Rail Fasteners",
+      "context": "We manage railway track fittings across 5 depots in the Northern zone. \nCurrent inventory levels are low due to supply chain delays. \nWe need to decide on a restocking strategy before the monsoon season.\nBudget constraint: ₹50 lakhs",
+      "notes": "+ Option A: Lower total inventory cost through consolidation\n+ Option A: Easier quality control from single source\n- Option A: Higher transportation costs to distant depots\n- Option A: Single point of failure risk\n+ Option B: Faster delivery to local depots\n+ Option B: Reduced transportation time\n- Option B: Higher overall inventory costs\n- Option B: More complex management across locations\n+ Option C: No upfront inventory investment\n+ Option C: Vendor expertise in demand forecasting\n- Option C: Less control over inventory\n- Option C: Dependency on vendor reliability",
+      "preferredOptionId": "opt-1",
+      "options": [
+        {
+          "id": "opt-1",
+          "label": "Option A: Centralized depot with high safety stock"
+        },
+        {
+          "id": "opt-2",
+          "label": "Option B: Distributed local buffers at each depot"
+        },
+        {
+          "id": "opt-3",
+          "label": "Option C: Vendor-managed inventory with weekly replenishment"
+        }
+      ]
+    },
+    "analysisSummary": {
+      "title": "Safety Stock Strategy for Rail Fasteners",
+      "suggestedOptionLabel": "Option A: Centralized depot with high safety stock",
+      "confidence": 0.55
+    },
+    "outcome": null
+  },
+  {
+    "id": "mm2okb3xjng684",
+    "createdAt": "2026-02-25T23:43:32.157Z",
+    "payload": {
+      "title": "Track Parts",
+      "context": "Track Parts Cost",
+      "notes": "",
+      "preferredOptionId": "opt-1",
+      "options": [
+        {
+          "id": "opt-1",
+          "label": "Option A: Easy Labor"
+        },
+        {
+          "id": "opt-2",
+          "label": "Option B: Tough for access."
+        }
+      ]
+    },
+    "analysisSummary": {
+      "title": "Track Parts",
+      "suggestedOptionLabel": "Option A: Easy Labor",
+      "confidence": 0.55
+    },
+    "outcome": null
+  },
+  {
+    "id": "mm2p0oawypw8e7",
+    "createdAt": "2026-02-25T23:56:15.752Z",
+    "payload": {
+      "title": "Price Increase",
+      "context": "Price Increase",
+      "notes": "+Option A: Available",
+      "preferredOptionId": "opt-1",
+      "options": [
+        {
+          "id": "opt-1",
+          "label": "Option A: Labors Available"
+        },
+        {
+          "id": "opt-2",
+          "label": "Option B: Cost Increases"
+        }
+      ]
+    },
+    "analysisSummary": {
+      "title": "Price Increase",
+      "suggestedOptionLabel": "Option A: Labors Available",
+      "confidence": 0.85
+    },
+    "outcome": null
+  },
+  {
+    "id": "mm2p3kijruamzx",
+    "createdAt": "2026-02-25T23:58:30.811Z",
+    "payload": {
+      "title": "Choose maintenance strategy for Track Section A",
+      "context": "Mainline section with high traffic density. Must maintain 99.5% uptime. Budget limit: ₹50 Lakhs.",
+      "notes": "+ Option A: Faster response time (reduces downtime by 2 hours)\n+ Option A: Lower labor cost (₹500/hour vs ₹800/hour)\n- Option A: Less specialized training\n- Option B: Higher initial investment (₹30 Lakhs equipment)\n+ Option B: Better quality repairs\n- Option B: Longer lead time for specialized parts",
+      "preferredOptionId": "opt-1",
+      "options": [
+        {
+          "id": "opt-1",
+          "label": "Option A: Easy Labor - Use local contract workers for quick repairs."
+        },
+        {
+          "id": "opt-2",
+          "label": "Option B: Tough for access - Use specialized equipment with limited availability."
+        }
+      ]
+    },
+    "analysisSummary": {
+      "title": "Choose maintenance strategy for Track Section A",
+      "suggestedOptionLabel": "Option A: Easy Labor - Use local contract workers for quick repairs.",
+      "confidence": 0.9
+    },
+    "outcome": null
+  },
+  {
+    "id": "mm2p8i0yqj1h1p",
+    "createdAt": "2026-02-26T00:02:20.866Z",
+    "payload": {
+      "title": "Choose maintenance strategy for Track Section A",
+      "context": "Mainline section with high traffic density. Must maintain 99.5% uptime. Budget limit: ₹50 Lakhs.",
+      "notes": "+ Option A: Faster response time (reduces downtime by 2 hours)\n+ Option A: Lower labor cost (₹500/hour vs ₹800/hour)\n- Option A: Less specialized training\n- Option B: Higher initial investment (₹30 Lakhs equipment)\n+ Option B: Better quality repairs\n- Option B: Longer lead time for specialized parts\n",
+      "preferredOptionId": null,
+      "options": [
+        {
+          "id": "opt-1",
+          "label": "Option A: Easy Labor - Use local contract workers for quick repairs"
+        },
+        {
+          "id": "opt-2",
+          "label": "Option B: Tough for access - Use specialized equipment with limited availability"
+        }
+      ]
+    },
+    "analysisSummary": {
+      "title": "Choose maintenance strategy for Track Section A",
+      "suggestedOptionLabel": "Option A: Easy Labor - Use local contract workers for quick repairs",
+      "confidence": 0.9
+    },
+    "outcome": null
+  },
+  {
+    "id": "mm2pclo91jywet",
+    "createdAt": "2026-02-26T00:05:32.217Z",
+    "payload": {
+      "title": "Choose maintenance strategy for Track Section A",
+      "context": "Mainline section with high traffic density. Must maintain 99.5% uptime. Budget limit: ₹50 Lakhs.",
+      "notes": "+ Option A: Faster response time (reduces downtime by 2 hours)\n+ Option A: Lower labor cost (₹500/hour vs ₹800/hour)\n- Option A: Less specialized training\n- Option B: Higher initial investment (₹30 Lakhs equipment)\n+ Option B: Better quality repairs\n- Option B: Longer lead time for specialized parts",
+      "preferredOptionId": null,
+      "options": [
+        {
+          "id": "opt-1",
+          "label": "Option A: Easy Labor - Use local contract workers for quick repairs."
+        },
+        {
+          "id": "opt-2",
+          "label": "Option B: Tough for access - Use specialized equipment with limited availability."
+        }
+      ]
+    },
+    "analysisSummary": {
+      "title": "Choose maintenance strategy for Track Section A",
+      "suggestedOptionLabel": "Option A: Easy Labor - Use local contract workers for quick repairs.",
+      "confidence": 0.9
+    },
+    "outcome": null
+  },
+  {
+    "id": "mm2yoj5qiy3o8q",
+    "createdAt": "2026-02-26T04:26:45.374Z",
+    "payload": {
+      "title": "Change of railway parts",
+      "context": "change of railway parts before rainy season",
+      "notes": "-Option A: Government is not keen on increasing budget\n+Option B: A good labour force is available",
+      "preferredOptionId": "opt-1",
+      "options": [
+        {
+          "id": "opt-1",
+          "label": "Low Cost"
+        },
+        {
+          "id": "opt-2",
+          "label": "Creating employment oppurtunities through this"
+        }
+      ]
+    },
+    "analysisSummary": {
+      "title": "Change of railway parts",
+      "suggestedOptionLabel": "Creating employment oppurtunities through this",
+      "confidence": 0.9
+    },
+    "outcome": null
+  },
+  {
+    "id": "mma7vwf9onbzjy",
+    "createdAt": "2026-03-03T06:18:48.933Z",
+    "payload": {
+      "title": "Track Parts",
+      "context": "Railway Tracks",
+      "notes": "",
+      "preferredOptionId": "opt-1",
+      "options": [
+        {
+          "id": "opt-1",
+          "label": "Option A Low Cost"
+        },
+        {
+          "id": "opt-2",
+          "label": "Option B High demand"
+        }
+      ]
+    },
+    "analysisSummary": {
+      "title": "Track Parts",
+      "suggestedOptionLabel": "Option A Low Cost",
+      "confidence": 0.55
+    },
+    "outcome": null
+  },
+  {
+    "id": "mma8k3t17u2f20",
+    "createdAt": "2026-03-03T06:37:38.245Z",
+    "payload": {
+      "title": "Railway Tracks",
+      "context": "Railway Budgets",
+      "notes": "",
+      "preferredOptionId": "opt-1",
+      "options": [
+        {
+          "id": "opt-1",
+          "label": "Option A Less Money"
+        },
+        {
+          "id": "opt-2",
+          "label": "Option B High Demand"
+        }
+      ]
+    },
+    "analysisSummary": {
+      "title": "Railway Tracks",
+      "suggestedOptionLabel": "Option A Less Money",
+      "confidence": 0.55
+    },
+    "outcome": null
+  },
+  {
+    "id": "mma8pbjj76dtu4",
+    "createdAt": "2026-03-03T06:41:41.551Z",
+    "payload": {
+      "title": "Track Parts",
+      "context": "Lead Times",
+      "notes": "",
+      "preferredOptionId": "opt-1",
+      "options": [
+        {
+          "id": "opt-1",
+          "label": "Option A High Demand "
+        },
+        {
+          "id": "opt-2",
+          "label": "Option B Low Cost"
+        }
+      ]
+    },
+    "analysisSummary": {
+      "title": "Track Parts",
+      "suggestedOptionLabel": "Option A High Demand ",
+      "confidence": 0.55
+    },
+    "outcome": null
+  },
+  {
+    "id": "mmaanbg7rzyjh7",
+    "createdAt": "2026-03-03T07:36:07.351Z",
+    "payload": {
+      "title": "Track Parts",
+      "context": "Budget",
+      "notes": "+ Safety Stock",
+      "preferredOptionId": "opt-1",
+      "options": [
+        {
+          "id": "opt-1",
+          "label": "Option A Low Cost"
+        },
+        {
+          "id": "opt-2",
+          "label": "Option B High Value"
+        }
+      ]
+    },
+    "analysisSummary": {
+      "title": "Track Parts",
+      "suggestedOptionLabel": "Option A Low Cost",
+      "confidence": 0.85
+    },
+    "outcome": null
+  },
+  {
+    "id": "mmant9wl1suamt",
+    "createdAt": "2026-03-03T13:44:40.293Z",
+    "payload": {
+      "title": "Track Parts",
+      "context": "Budget",
+      "notes": "+Lower Safety Lock",
+      "preferredOptionId": "opt-1",
+      "options": [
+        {
+          "id": "opt-1",
+          "label": "Option A Low Budget"
+        },
+        {
+          "id": "opt-2",
+          "label": "Option B High Demand"
+        }
+      ]
+    },
+    "analysisSummary": {
+      "title": "Track Parts",
+      "suggestedOptionLabel": "Option A Low Budget",
+      "confidence": 0.85
+    },
+    "outcome": null
+  },
+  {
+    "id": "mmao7lcj20x97w",
+    "createdAt": "2026-03-03T13:55:48.307Z",
+    "payload": {
+      "title": "Safety Stock Predictors",
+      "context": "Budget",
+      "notes": "",
+      "preferredOptionId": "opt-1",
+      "options": [
+        {
+          "id": "opt-1",
+          "label": "Option A Low Budget"
+        },
+        {
+          "id": "opt-2",
+          "label": "Option B High Demand"
+        }
+      ]
+    },
+    "analysisSummary": {
+      "title": "Safety Stock Predictors",
+      "suggestedOptionLabel": "Option A Low Budget",
+      "confidence": 0.55
+    },
+    "outcome": null
+  },
+  {
+    "id": "mmaofkk99cojoe",
+    "createdAt": "2026-03-03T14:02:00.537Z",
+    "payload": {
+      "title": "Track Parts",
+      "context": "Budget",
+      "notes": "+Lower safety Stock",
+      "preferredOptionId": "opt-1",
+      "options": [
+        {
+          "id": "opt-1",
+          "label": "Option A Low Budget"
+        },
+        {
+          "id": "opt-2",
+          "label": "Option B High Demand"
+        }
+      ]
+    },
+    "analysisSummary": {
+      "title": "Track Parts",
+      "suggestedOptionLabel": "Option A Low Budget",
+      "confidence": 0.85
+    },
+    "outcome": null
+  },
+  {
+    "id": "mmaooy43oxll4e",
+    "createdAt": "2026-03-03T14:09:18.003Z",
+    "payload": {
+      "title": "Track Parts",
+      "context": "Budget",
+      "notes": "",
+      "preferredOptionId": "opt-1",
+      "options": [
+        {
+          "id": "opt-1",
+          "label": "Option A Low Budget"
+        },
+        {
+          "id": "opt-2",
+          "label": "Option B High Demand"
+        }
+      ]
+    },
+    "analysisSummary": {
+      "title": "Track Parts",
+      "suggestedOptionLabel": "Option A Low Budget",
+      "confidence": 0.55
+    },
+    "outcome": null
+  },
+  {
+    "id": "mmaost7275m97e",
+    "createdAt": "2026-03-03T14:12:18.254Z",
+    "payload": {
+      "title": "Track Parts",
+      "context": "Budget",
+      "notes": "",
+      "preferredOptionId": "opt-1",
+      "options": [
+        {
+          "id": "opt-1",
+          "label": "Option A Low Budget"
+        },
+        {
+          "id": "opt-2",
+          "label": "Option B High Demand"
+        }
+      ]
+    },
+    "analysisSummary": {
+      "title": "Track Parts",
+      "suggestedOptionLabel": "Option A Low Budget",
+      "confidence": 0.55
+    },
+    "outcome": null
+  },
+  {
+    "id": "mmaoygjicknp0x",
+    "createdAt": "2026-03-03T14:16:41.790Z",
+    "payload": {
+      "title": "Track Parts",
+      "context": "Budget",
+      "notes": "+Lower Safety Stock",
+      "preferredOptionId": "opt-1",
+      "options": [
+        {
+          "id": "opt-1",
+          "label": "Option A Low Budget"
+        },
+        {
+          "id": "opt-2",
+          "label": "Option B High Demand"
+        }
+      ]
+    },
+    "analysisSummary": {
+      "title": "Track Parts",
+      "suggestedOptionLabel": "Option A Low Budget",
+      "confidence": 0.85
+    },
+    "outcome": null
+  },
+  {
+    "id": "mmc3tywfpry4fb",
+    "createdAt": "2026-03-04T14:00:52.719Z",
+    "payload": {
+      "title": "Track Parts",
+      "context": "Budget",
+      "notes": "+Lower safety stock",
+      "preferredOptionId": "opt-1",
+      "options": [
+        {
+          "id": "opt-1",
+          "label": "Option A Low Budget"
+        },
+        {
+          "id": "opt-2",
+          "label": "Option B High Cost"
+        }
+      ]
+    },
+    "analysisSummary": {
+      "title": "Track Parts",
+      "suggestedOptionLabel": "Option A Low Budget",
+      "confidence": 0.85
+    },
+    "outcome": null
+  }
+]

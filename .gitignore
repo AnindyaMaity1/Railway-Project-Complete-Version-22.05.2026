@@ -1,0 +1,124 @@
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+.venv/
+venv/
+__pycache__/
+*.egg-info/
+dist/
+build/
+
+# Environment & Secrets (NEVER COMMIT!)
+.env
+.env.local
+.env.*.local
+.env.production
+config.env
+server/.env
+client/.env
+ai-service/.env
+
+# Database & Uploads
+database/
+*.sqlite
+*.sqlite3
+uploads/
+data/
+/tmp
+
+# Build Files & Artifacts
+client/build/
+client/dist/
+server/dist/
+ai-service/build/
+*.o
+*.so
+*.pyc
+*.pyo
+
+# IDE & Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+npm-error.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-error.log*
+lerna-debug.log*
+node-gyp-error.log*
+pip-log.txt
+pip-delete-this-directory.txt
+.python-history
+
+# Testing
+.coverage
+.nyc_output
+coverage/
+__pycache__
+.pytest_cache/
+.mocha_cache/
+
+# OS
+.AppleDouble
+.LSOverride
+*.rar
+*.exe
+*.msi
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+.vuepress/dist/
+
+# Docker
+.dockerignore
+docker-compose.override.yml
+
+# Production cache
+.cache/
+.intermediate/
+
+# Environment variables for different environments
+.env.development
+.env.staging
+.env.test
+
+# IDE Database  
+.vscode/settings.json
+.idea/workspace.xml
+.idea/tasks.xml
+
+# Node modules (large folder)
+node_modules/
+
+# macOS
+.AppleDouble
+.LSOverride
+*.swp
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Keep example files
+!.env.example
+!server/.env.example
+!client/.env.example
+!

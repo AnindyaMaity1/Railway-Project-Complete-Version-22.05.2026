@@ -1,0 +1,43 @@
+{
+  "name": "railway-qr-server",
+  "version": "1.0.0",
+  "description": "Backend server for Railway Track QR Code Management System",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "axios": "^1.6.2",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-rate-limit": "^7.1.5",
+    "express-validator": "^7.0.1",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "moment": "^2.29.4",
+    "mongoose": "^7.6.0",
+    "multer": "^1.4.5-lts.1",
+    "node-cron": "^4.2.1",
+    "node-geocoder": "^4.2.0",
+    "nodemailer": "^8.0.1",
+    "pdfkit": "^0.13.0",
+    "qrcode": "^1.5.3",
+    "socket.io": "^4.7.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.2"
+  },
+  "keywords": [
+    "railway",
+    "qr-code",
+    "api",
+    "track-fittings"
+  ],
+  "author": "Railway Track QR Team",
+  "license": "MIT"
+}
