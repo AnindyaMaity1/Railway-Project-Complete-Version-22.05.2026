@@ -21,6 +21,7 @@ import ErrorBoundary from './components/ErrorBoundary';
 import ShortestPathFinder from './components/ShortestPathFinder';
 import DecisionCopilot from './components/DecisionCopilot';
 import Reports from './components/Reports';
+import CarbonAnalytics from './components/CarbonAnalytics';
 
 // Context
 import { AuthProvider, useAuth } from './context/AuthContext';
@@ -160,6 +161,15 @@ const AppContent = () => {
               element={
                 <ProtectedRoute>
                   <Reports />
+                </ProtectedRoute>
+              } 
+            />
+            
+            <Route 
+              path="/carbon-analytics" 
+              element={
+                <ProtectedRoute>
+                  <CarbonAnalytics />
                 </ProtectedRoute>
               } 
             />

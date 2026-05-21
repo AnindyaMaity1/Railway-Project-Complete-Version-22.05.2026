@@ -31,6 +31,12 @@ module.exports = new Schema({
     qualityComplaints: { type: Number, default: 0 },
     averageRating: { type: Number, default: 0 }
   },
+  carbonEvaluation: {
+    carbonIntensity: { type: Number, default: 120 },
+    sustainabilityScore: { type: Number, default: 0 },
+    greenCertificationCount: { type: Number, default: 0 },
+    lastReviewedDate: { type: Date }
+  },
   documents: { type: Schema.Types.Mixed, default: [] },
   notes: { type: String },
   status: { type: String },

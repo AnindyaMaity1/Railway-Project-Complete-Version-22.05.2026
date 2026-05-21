@@ -85,6 +85,7 @@ app.use('/api/auth', require('./routes/auth'));
 app.use('/api/qr', require('./routes/qr'));
 app.use('/api/scan', require('./routes/scan'));
 app.use('/api/inventory', require('./routes/inventory'));
+app.use('/api/carbon', require('./routes/carbon'));
 app.use('/api/inspections', require('./routes/inspections'));
 app.use('/api/vendors', require('./routes/vendors'));
 app.use('/api/reports', require('./routes/reports'));

@@ -2,7 +2,9 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 
 // Support both DATABASE_URL (for Render) and MONGO_URI (for fallback)
-const MONGO_URI = process.env.DATABASE_URL || process.env.MONGO_URI || 'mongodb+srv://railway_project:Railway123@cluster0.pdpldkg.mongodb.net/?appName=Cluster0';
+const rawDbUrl = process.env.DATABASE_URL;
+const isMongoUrl = rawDbUrl && (rawDbUrl.startsWith('mongodb://') || rawDbUrl.startsWith('mongodb+srv://'));
+const MONGO_URI = isMongoUrl ? rawDbUrl : process.env.MONGO_URI || 'mongodb+srv://railway_project:Railway123@cluster0.pdpldkg.mongodb.net/?appName=Cluster0';
 
 const connectMongo = async () => {
   try {

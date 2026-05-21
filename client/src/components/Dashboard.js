@@ -17,7 +17,8 @@ import {
   FaChartLine,
   FaCog,
   FaSpinner,
-  FaTrain
+  FaTrain,
+  FaLeaf
 } from 'react-icons/fa';
 import LoadingSpinner from './LoadingSpinner';
 import { Link } from 'react-router-dom';
@@ -82,6 +83,7 @@ const FeatureCard = ({ icon, title, description, color, onExplain }) => (
 const Dashboard = () => {
   const { user } = useAuth();
   const [stats, setStats] = useState(null);
+  const [carbonSummary, setCarbonSummary] = useState(null);
   const [loading, setLoading] = useState(true);
   const socket = useContext(SocketContext);
   const [featureModal, setFeatureModal] = useState({
@@ -196,15 +198,19 @@ const Dashboard = () => {
       setLoading(true);
       
       // Fetch real data from APIs
-      const [trackFittingsRes, inspectionsRes, vendorsRes] = await Promise.all([
+      const [trackFittingsRes, inspectionsRes, vendorsRes, carbonSummaryRes] = await Promise.all([
         axios.get('/api/inventory'),
         axios.get('/api/inspections'),
-        axios.get('/api/vendors')
+        axios.get('/api/vendors'),
+        axios.get('/api/inventory/carbon-summary')
       ]);
 
       const trackFittings = trackFittingsRes.data.data?.trackFittings || [];
       const inspections = inspectionsRes.data.data?.inspections || [];
       const vendors = vendorsRes.data.data || [];
+      const carbonSummaryData = carbonSummaryRes.data.data?.carbonReport || null;
+
+      setCarbonSummary(carbonSummaryData);
 
       // Calculate real statistics
       const totalFittings = trackFittings.length;
@@ -475,6 +481,27 @@ const Dashboard = () => {
               icon={<FaExclamationTriangle />} 
               variant="info"
               gradient="linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)"
+            />
+          </Col>
+        </Row>
+
+        <Row className="g-4 mb-5">
+          <Col xs={12} sm={6} lg={3}>
+            <StatCard
+              title="Current CO₂ Emissions"
+              value={carbonSummary ? `${carbonSummary.totalEmissionsCO2.toLocaleString()} kg` : 'N/A'}
+              icon={<FaLeaf />}
+              variant="success"
+              gradient="linear-gradient(135deg, #22c55e 0%, #4ade80 100%)"
+            />
+          </Col>
+          <Col xs={12} sm={6} lg={3}>
+            <StatCard
+              title="Projected 5yr Emissions"
+              value={carbonSummary ? `${carbonSummary.projectedNext5Years.toLocaleString()} kg` : 'N/A'}
+              icon={<FaChartLine />}
+              variant="warning"
+              gradient="linear-gradient(135deg, #fbbf24 0%, #fde047 100%)"
             />
           </Col>
         </Row>

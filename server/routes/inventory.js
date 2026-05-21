@@ -1,6 +1,9 @@
 const express = require('express');
-const { TrackFitting } = require('../models_mongo');
+const { TrackFitting, Vendor } = require('../models_mongo');
 const { auth, adminOnly } = require('../middleware/auth');
+const { buildAssetCarbonReport, computeVendorCarbonScore } = require('../utils/carbonEngine');
+const { runSustainabilityBrain } = require('../utils/sustainabilityBrain');
+const { runDigitalTwin } = require('../utils/digitalTwinEngine');
 
 const router = express.Router();
 
@@ -66,6 +69,66 @@ router.get('/', auth, async (req, res) => {
   } catch (error) {
     console.error('Error fetching inventory:', error);
     res.status(500).json({ success: false, message: 'Failed to fetch inventory' });
+  }
+});
+
+// Get carbon analytics summary for track fittings and vendors
+router.get('/carbon-summary', auth, async (req, res) => {
+  try {
+    const trackFittings = await TrackFitting.find().lean();
+    const vendors = await Vendor.find().lean();
+
+    const carbonReport = buildAssetCarbonReport(trackFittings);
+    const vendorScores = vendors.map((vendor) => computeVendorCarbonScore(vendor));
+
+    res.json({
+      success: true,
+      data: {
+        carbonReport,
+        vendorScores,
+        recommendations: [
+          'Reduce high-emission rail fittings by extending service life and improving recyclability.',
+          'Prioritise vendor partners with strong carbon intensity ratings and green certifications.',
+          'Use predictive maintenance cadence to avoid unnecessary replacements and lower lifecycle CO₂.'
+        ]
+      }
+    });
+  } catch (error) {
+    console.error('Error fetching carbon summary:', error);
+    res.status(500).json({ success: false, message: 'Failed to fetch carbon summary' });
+  }
+});
+
+// AI Sustainability Brain — multi-dimensional analysis, scores, alerts, forecasts
+router.get('/sustainability-brain', auth, async (req, res) => {
+  try {
+    const trackFittings = await TrackFitting.find().lean();
+    const vendors = await Vendor.find().lean();
+    const brain = runSustainabilityBrain(trackFittings, vendors);
+
+    res.json({
+      success: true,
+      data: brain
+    });
+  } catch (error) {
+    console.error('Error running sustainability brain:', error);
+    res.status(500).json({ success: false, message: 'Failed to run sustainability brain analysis' });
+  }
+});
+
+// Sustainability Digital Twin — live infrastructure mirror
+router.get('/digital-twin', auth, async (req, res) => {
+  try {
+    const trackFittings = await TrackFitting.find().lean();
+    const twin = runDigitalTwin(trackFittings);
+
+    res.json({
+      success: true,
+      data: twin
+    });
+  } catch (error) {
+    console.error('Error building digital twin:', error);
+    res.status(500).json({ success: false, message: 'Failed to build sustainability digital twin' });
   }
 });
 
