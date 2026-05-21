@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: railway-backend
+    env: node
+    root: server
+    buildCommand: npm install
+    startCommand: npm start
+    plan: free
+
+  - type: static
+    name: railway-frontend
+    env: static
+    root: client
+    buildCommand: npm install && npm run build
+    publishPath: build
+    plan: free
+
+  - type: web
+    name: railway-ai-service
+    env: python
+    root: ai-service
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT
+    plan: free
+
+# Notes:
+# - Set required environment variables in Render dashboard for each service.
+# - Backend needs DATABASE_URL or MONGO_URI, JWT_SECRET, CLIENT_URL, CORS_ORIGIN, AI_SERVICE_URL.
+# - Frontend needs REACT_APP_API_URL.
+# - AI service can use optional MONGO_URI and FLASK_ENV.
