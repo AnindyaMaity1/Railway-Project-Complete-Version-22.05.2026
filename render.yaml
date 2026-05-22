@@ -7,15 +7,14 @@ services:
     startCommand: npm start
 
   - type: web
-    name: railway-frontend
-    env: node
-    rootDir: client
-    buildCommand: npm install && npm run build
-    startCommand: npx serve -s build -l $PORT
-
-  - type: web
     name: railway-ai-service
     env: python
     rootDir: ai-service
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn app:app --bind 0.0.0.0:$PORT
+
+  - type: static_site
+    name: railway-frontend
+    rootDir: client
+    buildCommand: npm install && npm run build
+    publishPath: build
