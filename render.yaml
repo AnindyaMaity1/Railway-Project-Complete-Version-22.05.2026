@@ -6,11 +6,12 @@ services:
     buildCommand: npm install
     startCommand: npm start
 
-  - type: static_site
+  - type: web
     name: railway-frontend
+    env: node
     rootDir: client
     buildCommand: npm install && npm run build
-    publishPath: build
+    startCommand: npx serve -s build -l $PORT
 
   - type: web
     name: railway-ai-service
