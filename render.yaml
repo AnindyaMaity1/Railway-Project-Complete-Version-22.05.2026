@@ -13,7 +13,6 @@ services:
     rootDir: client
     buildCommand: npm install && npm run build
     staticPublishPath: build
-    plan: free
 
   - type: web
     name: railway-ai-service
